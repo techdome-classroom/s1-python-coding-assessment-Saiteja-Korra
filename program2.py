@@ -27,12 +27,10 @@ def decode_message(s: str, p: str) -> bool:
         if p_ptr < p_len and (p[p_ptr] == s[s_ptr] or p[p_ptr] == '?'):
             s_ptr += 1
             p_ptr += 1
-        # Match '*' with any sequence of characters
         elif p_ptr < p_len and p[p_ptr] == '*':
             star_idx = p_ptr
             s_tmp_idx = s_ptr
             p_ptr += 1
-        # If previous character was '*', try next character in 's'
         elif star_idx != -1:
             p_ptr = star_idx + 1
             s_tmp_idx += 1
