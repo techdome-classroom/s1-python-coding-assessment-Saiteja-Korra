@@ -27,7 +27,7 @@ class Solution:
     def getTotalIsles(self, grid: list[list[str]]) -> int:
         if not grid or not grid[0]:
             return 0
-        island_count = 0
+        res = 0
         def explore_island(row, col):
             stack = [(row, col)]  
             while stack:
