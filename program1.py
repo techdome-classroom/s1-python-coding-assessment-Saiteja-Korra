@@ -17,5 +17,6 @@ class Solution:
             for c in range(len(grid[0])):
                 if grid[r][c] == 'L':
                     dfs(r, c)
+                    
                   
         return 0
