@@ -4,7 +4,7 @@ def decode_message( s: str, p: str) -> bool:
         for j in range(1, len(p) + 1):
                 if p[j - 1] == '*':
                 dp[0][j] = dp[0][j - 1]
-                
+
         for i in range(1, len(s) + 1):
                 for j in range(1, len(p) + 1):
                 if p[j - 1] == '*':
@@ -16,5 +16,3 @@ def decode_message( s: str, p: str) -> bool:
         
         return dp[len(s)][len(p)]
 # write your code here
-  
-        return False
