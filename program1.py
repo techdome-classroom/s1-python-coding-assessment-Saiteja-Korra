@@ -45,5 +45,5 @@ class Solution:
                     explore_island(row, col) 
                     res += 1 
 
-        return island_count
+        return res
 
