@@ -1,8 +1,6 @@
 def decode_message( s: str, p: str) -> bool:
         dp = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]
-        dp[0][0] = True  # Empty pattern matches empty string
-    
-    # Initialize first row for patterns starting with '*'
+        dp[0][0] = True  
         for j in range(1, len(p) + 1):
                 if p[j - 1] == '*':
                 dp[0][j] = dp[0][j - 1]
