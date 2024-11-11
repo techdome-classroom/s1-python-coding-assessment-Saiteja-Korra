@@ -34,7 +34,6 @@ class Solution:
                 r, c = stack.pop()
                 if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] == 'W':
                     continue
-                # Mark the cell as visited by changing 'L' to 'W'
                 grid[r][c] = 'W'
                 # Add neighboring cells to the stack for exploration
                 stack.append((r - 1, c))  # up
