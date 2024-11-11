@@ -43,7 +43,7 @@ class Solution:
             for col in range(len(grid[0])):
                 if grid[row][col] == 'L':
                     explore_island(row, col) 
-                    island_count += 1 
+                    res += 1 
 
         return island_count
 
