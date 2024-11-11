@@ -25,19 +25,13 @@
 
 class Solution:
     def getTotalIsles(self, grid: list[list[str]]) -> int:
-        # Edge case: empty grid
         if not grid or not grid[0]:
             return 0
-
-        # Number of islands counter
         island_count = 0
-
-        # Helper function to mark an island iteratively using a stack
         def explore_island(row, col):
-            stack = [(row, col)]  # Start with the initial land cell
+            stack = [(row, col)]  
             while stack:
                 r, c = stack.pop()
-                # Check if the current cell is out of bounds or water
                 if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] == 'W':
                     continue
                 # Mark the cell as visited by changing 'L' to 'W'
