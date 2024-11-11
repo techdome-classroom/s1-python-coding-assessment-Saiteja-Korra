@@ -39,8 +39,6 @@ def decode_message(s: str, p: str) -> bool:
             s_ptr = s_tmp_idx
         else:
             return False
-    
-    # Check remaining pattern characters
     while p_ptr < p_len and p[p_ptr] == '*':
         p_ptr += 1
     
