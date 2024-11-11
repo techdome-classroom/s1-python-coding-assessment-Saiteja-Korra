@@ -12,6 +12,9 @@ class Solution:
             dfs(r + 1, c)
             dfs(r, c - 1)
             dfs(r, c + 1)
-            
+        res = 0
+        for r in range(len(grid)):
+            for c in range(len(grid[0])):
+                
                   
         return 0
