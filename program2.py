@@ -23,7 +23,6 @@ def decode_message(s: str, p: str) -> bool:
     star_idx = s_tmp_idx = -1
     
     while s_ptr < s_len:
-        # Match single character or '?'
         if p_ptr < p_len and (p[p_ptr] == s[s_ptr] or p[p_ptr] == '?'):
             s_ptr += 1
             p_ptr += 1
