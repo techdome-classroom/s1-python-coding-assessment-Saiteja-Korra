@@ -22,3 +22,39 @@
         
                   
 #         return res
+
+class Solution:
+    def getTotalIsles(self, grid: list[list[str]]) -> int:
+        # Edge case: empty grid
+        if not grid or not grid[0]:
+            return 0
+
+        # Number of islands counter
+        island_count = 0
+
+        # Helper function to mark an island iteratively using a stack
+        def explore_island(row, col):
+            stack = [(row, col)]  # Start with the initial land cell
+            while stack:
+                r, c = stack.pop()
+                # Check if the current cell is out of bounds or water
+                if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] == 'W':
+                    continue
+                # Mark the cell as visited by changing 'L' to 'W'
+                grid[r][c] = 'W'
+                # Add neighboring cells to the stack for exploration
+                stack.append((r - 1, c))  # up
+                stack.append((r + 1, c))  # down
+                stack.append((r, c - 1))  # left
+                stack.append((r, c + 1))  # right
+
+        # Iterate over each cell in the grid
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                # Start a new island exploration if an unvisited land cell is found
+                if grid[row][col] == 'L':
+                    explore_island(row, col)  # Mark the entire island as visited
+                    island_count += 1  # Increment the island counter
+
+        return island_count
+
