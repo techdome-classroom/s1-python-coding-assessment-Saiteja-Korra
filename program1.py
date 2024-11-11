@@ -38,9 +38,7 @@ class Solution:
                 stack.append((r - 1, c))  
                 stack.append((r + 1, c))  
                 stack.append((r, c - 1))  
-                stack.append((r, c + 1))  
-
-        # Iterate over each cell in the grid
+                stack.append((r, c + 1)) 
         for row in range(len(grid)):
             for col in range(len(grid[0])):
                 # Start a new island exploration if an unvisited land cell is found
