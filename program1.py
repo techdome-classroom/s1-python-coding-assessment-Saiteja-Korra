@@ -35,11 +35,10 @@ class Solution:
                 if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] == 'W':
                     continue
                 grid[r][c] = 'W'
-                # Add neighboring cells to the stack for exploration
-                stack.append((r - 1, c))  # up
-                stack.append((r + 1, c))  # down
-                stack.append((r, c - 1))  # left
-                stack.append((r, c + 1))  # right
+                stack.append((r - 1, c))  
+                stack.append((r + 1, c))  
+                stack.append((r, c - 1))  
+                stack.append((r, c + 1))  
 
         # Iterate over each cell in the grid
         for row in range(len(grid)):
