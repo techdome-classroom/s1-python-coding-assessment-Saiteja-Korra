@@ -41,10 +41,9 @@ class Solution:
                 stack.append((r, c + 1)) 
         for row in range(len(grid)):
             for col in range(len(grid[0])):
-                # Start a new island exploration if an unvisited land cell is found
                 if grid[row][col] == 'L':
-                    explore_island(row, col)  # Mark the entire island as visited
-                    island_count += 1  # Increment the island counter
+                    explore_island(row, col) 
+                    island_count += 1 
 
         return island_count
 
